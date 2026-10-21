@@ -1,0 +1,15 @@
+.venv/
+.uv-cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+.mplconfig/
+.check-env/
+.pre-commit-cache/
+.ruff_cache/
+.jupyter-runtime/
+.verification/

@@ -1,0 +1,17 @@
+repos:
+  - repo: local
+    hooks:
+      - id: exercise-2-ruff-check
+        name: Exercise 2 Python checks
+        entry: ruff check --config "exercise 2/pyproject.toml" --cache-dir "exercise 2/.ruff_cache"
+        language: python
+        additional_dependencies: [ruff==0.17.1]
+        files: '^exercise 2/.*\.py$'
+        types: [python]
+      - id: exercise-2-ruff-format
+        name: Exercise 2 formatting
+        entry: ruff format --check --config "exercise 2/pyproject.toml" --cache-dir "exercise 2/.ruff_cache"
+        language: python
+        additional_dependencies: [ruff==0.17.1]
+        files: '^exercise 2/.*\.py$'
+        types: [python]

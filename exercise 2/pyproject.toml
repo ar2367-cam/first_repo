@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fed-gdp-analysis"
+version = "0.1.0"
+description = "Modular annual GDP analysis for seven countries, 2000–2022"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.2,<3", "matplotlib>=3.8,<4", "numpy>=1.26,<3"]
+
+[project.optional-dependencies]
+notebook = ["jupyterlab>=4,<5", "ipykernel>=6,<8", "nbclient>=0.10,<1", "nbformat>=5,<6"]
+dev = ["pytest>=8,<10", "ruff>=0.14,<1", "pre-commit>=4,<5", "pip>=25,<27", "setuptools>=68", "wheel>=0.45"]
+
+[tool.setuptools.packages.find]
+include = ["fed*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["fed"]
